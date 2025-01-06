@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propose Love</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="step step-1">
+      <h1>Enter Names</h1>
+      <input type="text" id="maleName" placeholder="Male's Name">
+      <input type="text" id="femaleName" placeholder="Female's Name">
+      <button id="nextToStep2">Next</button>
+    </div>
+
+    <div class="step step-2">
+      <h1>Do you love her/him?</h1>
+      <button id="loveYes">Yes</button>
+      <button id="loveNo">No</button>
+    </div>
+
+    <div class="result" id="result">
+      <div class="heart-container">
+        <div class="heart heart-left"></div>
+        <div class="heart heart-right"></div>
+      </div>
+      <h2 id="resultText"></h2>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
