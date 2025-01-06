@@ -1,36 +1,40 @@
-// Select elements
-const maleNameInput = document.getElementById('maleName');
-const femaleNameInput = document.getElementById('femaleName');
-const nextButton = document.getElementById('nextToStep2');
-const loveYesButton = document.getElementById('loveYes');
-const loveNoButton = document.getElementById('loveNo');
-const result = document.getElementById('result');
-const heartContainer = document.querySelector('.heart-container');
-const resultText = document.getElementById('resultText');
-const steps = document.querySelectorAll('.step');
+document.getElementById("nextButton").addEventListener("click", function () {
+  const maleName = document.getElementById("maleName").value.trim();
+  const femaleName = document.getElementById("femaleName").value.trim();
 
-function showStep(stepIndex) {
-  steps.forEach((step, index) => {
-    step.classList.toggle('active', index === stepIndex);
-  });
-}
-
-nextButton.addEventListener('click', () => {
-  if (maleNameInput.value && femaleNameInput.value) {
-    showStep(1);
-  } else {
-    alert('Please enter both names.');
+  if (maleName === "" || femaleName === "") {
+    alert("Please enter both names!");
+    return;
   }
+
+  document.querySelector(".form").style.display = "none";
+  document.querySelector(".decision").style.display = "block";
 });
 
-loveYesButton.addEventListener('click', () => {
-  resultText.textContent = `${maleNameInput.value} ❤️ ${femaleNameInput.value}`;
-  heartContainer.classList.add('heart-join');
-  showStep(2);
+document.getElementById("loveYesButton").addEventListener("click", function () {
+  const maleName = document.getElementById("maleName").value.trim();
+  const femaleName = document.getElementById("femaleName").value.trim();
+
+  document.querySelector(".decision").style.display = "none";
+  document.querySelector(".result").style.display = "block";
+
+  const heart = document.getElementById("heart");
+  heart.className = "heart";
+
+  const resultText = document.getElementById("resultText");
+  resultText.textContent = `${maleName} ❤️ ${femaleName}`;
 });
 
-loveNoButton.addEventListener('click', () => {
-  resultText.textContent = `${maleNameInput.value} 💔 ${femaleNameInput.value}`;
-  heartContainer.classList.add('heart-broken');
-  showStep(2);
+document.getElementById("loveNoButton").addEventListener("click", function () {
+  const maleName = document.getElementById("maleName").value.trim();
+  const femaleName = document.getElementById("femaleName").value.trim();
+
+  document.querySelector(".decision").style.display = "none";
+  document.querySelector(".result").style.display = "block";
+
+  const heart = document.getElementById("heart");
+  heart.className = "broken-heart";
+
+  const resultText = document.getElementById("resultText");
+  resultText.textContent = `${maleName} 💔 ${femaleName}`;
 });
