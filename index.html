@@ -8,25 +8,24 @@
 </head>
 <body>
   <div class="container">
-    <div class="step step-1">
-      <h1>Enter Names</h1>
-      <input type="text" id="maleName" placeholder="Male's Name">
-      <input type="text" id="femaleName" placeholder="Female's Name">
-      <button id="nextToStep2">Next</button>
+    <div class="form">
+      <h1>Propose Your Love</h1>
+      <label for="maleName">Enter Male Name:</label>
+      <input type="text" id="maleName" placeholder="e.g., John">
+      <label for="femaleName">Enter Female Name:</label>
+      <input type="text" id="femaleName" placeholder="e.g., Jane">
+      <button id="nextButton">Next</button>
     </div>
 
-    <div class="step step-2">
-      <h1>Do you love her/him?</h1>
-      <button id="loveYes">Yes</button>
-      <button id="loveNo">No</button>
+    <div class="decision" style="display: none;">
+      <h2>Does Love Exist?</h2>
+      <button id="loveYesButton">Yes</button>
+      <button id="loveNoButton">No</button>
     </div>
 
-    <div class="result" id="result">
-      <div class="heart-container">
-        <div class="heart heart-left"></div>
-        <div class="heart heart-right"></div>
-      </div>
-      <h2 id="resultText"></h2>
+    <div class="result" style="display: none;">
+      <div id="heart" class="heart"></div>
+      <p id="resultText"></p>
     </div>
   </div>
 
